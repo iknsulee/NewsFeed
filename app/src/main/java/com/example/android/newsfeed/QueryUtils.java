@@ -40,6 +40,15 @@ public final class QueryUtils {
      * Query the guardian dataset and return a list of {@link NewsItem} objects.
      */
     public static List<NewsItem> fetchNewsItemData(String requestUrl) {
+        Log.d(LOG_TAG, "fetchNewsItemData");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Log.e(LOG_TAG, "fetchNewsItemData", e);
+//            e.printStackTrace();
+        }
+
         // Create URL object
         URL url = createUrl(requestUrl);
 
@@ -156,7 +165,11 @@ public final class QueryUtils {
 
             // Extract the JSONArray associated with the key called "results",
             // which represents a list of results.
-            JSONArray newsItemArray = baseJsonResponse.getJSONArray("results");
+            JSONObject response = baseJsonResponse.getJSONObject("response");
+
+            // Extract the JSONArray associated with the key called "results",
+            // which represents a list of results.
+            JSONArray newsItemArray = response.getJSONArray("results");
 
             // For each NewsItem in the newsItemArray, create an {@link NewsItem} object
             for (int i = 0; i < newsItemArray.length(); i++) {
