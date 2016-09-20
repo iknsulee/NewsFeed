@@ -35,6 +35,9 @@ public class NewsItemAdapter extends ArrayAdapter<NewsItem> {
         TextView titleView = (TextView) listItemView.findViewById(R.id.title);
         titleView.setText(currentNewsItem.getWebTitle());
 
+        TextView sectionNameView = (TextView) listItemView.findViewById(R.id.section_name);
+        sectionNameView.setText(currentNewsItem.getSectionName());
+
         // Return the list item view that is now showing the appropriate data
         return listItemView;
     }

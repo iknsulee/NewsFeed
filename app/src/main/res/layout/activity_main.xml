@@ -20,7 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="News feed empty"
         android:textAppearance="?android:textAppearanceMedium" />
 
     <!-- Loading indicator for user feedback between queries to USGS -->

@@ -2,6 +2,7 @@ package com.example.android.newsfeed;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,6 +44,18 @@ public class MainActivity extends AppCompatActivity
         newsItemAdapter = new NewsItemAdapter(this, newsItems);
 
         newsFeedListView.setAdapter(newsItemAdapter);
+
+        newsFeedListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                NewsItem currentNewsItem = newsItemAdapter.getItem(position);
+                Uri newsUri = Uri.parse(currentNewsItem.getWebUrl());
+
+                Intent newsSiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
+                startActivity(newsSiteIntent);
+            }
+        });
 
         // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
