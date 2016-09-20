@@ -115,5 +115,7 @@ public class MainActivity extends AppCompatActivity
     public void onLoaderReset(Loader<List<NewsItem>> loader) {
         Log.d(LOG_TAG, "onLoaderReset");
 
+        // Loader reset, so we can clear out our existing data.
+        newsItemAdapter.clear();
     }
 }
