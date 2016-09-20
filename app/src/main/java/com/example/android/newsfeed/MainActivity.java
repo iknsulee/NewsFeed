@@ -39,17 +39,6 @@ public class MainActivity extends AppCompatActivity
         newsFeedListView.setEmptyView(emptyStateTextView);
 
         ArrayList<NewsItem> newsItems = new ArrayList<>();
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
-//        newsItems.add(new NewsItem("title1", "url1", "apiUrl1", "date1"));
         newsItemAdapter = new NewsItemAdapter(this, newsItems);
 
         newsFeedListView.setAdapter(newsItemAdapter);
